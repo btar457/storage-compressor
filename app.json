@@ -1,26 +1,17 @@
 {
   "expo": {
-    "name": "Storage Compressor",
+    "name": "StorageCompressor",
     "slug": "storage-compressor",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.yourname.storagecompressor",
-      "permissions": [
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "READ_MEDIA_IMAGES",
-        "READ_MEDIA_VIDEO"
-      ]
+      "package": "com.btar457.storagecompressor"
     },
     "plugins": [
+      "expo-router",
       "expo-image-picker",
-      "expo-document-picker",
-      "expo-file-system"
+      "expo-document-picker"
     ]
   }
 }
