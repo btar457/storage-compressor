@@ -1,11 +1,13 @@
 import { Stack } from 'expo-router';
 
-export default function RootLayout() {
+export default function Layout() {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: 'Storage Compressor' }} />
-      <Stack.Screen name="images" options={{ title: 'ضغط الصور' }} />
-      <Stack.Screen name="files" options={{ title: 'ضغط الملفات' }} />
-    </Stack>
+    <Stack
+      screenOptions={{
+        headerStyle: { backgroundColor: '#6366f1' },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    />
   );
 }
