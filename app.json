@@ -14,9 +14,9 @@
       "package": "com.btar457.storagecompressor"
     },
     "plugins": [
-      "expo-router",
       "expo-image-picker",
       "expo-document-picker"
-    ]
+    ],
+    "scheme": "storage-compressor"
   }
 }
