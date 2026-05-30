@@ -3,13 +3,15 @@ import {
   View, Text, TouchableOpacity,
   StyleSheet, ScrollView
 } from 'react-native';
-import { useRouter } from 'expo-router';
 import { initDatabase, getStats } from '../utils/storage';
 import { formatSize, savingsPercent } from '../utils/compression';
 
 export default function HomeScreen() {
-  const router = useRouter();
-  const [stats, setStats] = useState({ totalOriginal: 0, totalCompressed: 0, count: 0 });
+  const [stats, setStats] = useState({ 
+    totalOriginal: 0, 
+    totalCompressed: 0, 
+    count: 0 
+  });
 
   useEffect(() => {
     initDatabase();
@@ -20,7 +22,6 @@ export default function HomeScreen() {
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Storage Compressor</Text>
 
-      {/* بطاقة الإحصائيات */}
       <View style={styles.statsCard}>
         <Text style={styles.statsTitle}>المساحة الموفّرة</Text>
         <Text style={styles.savedText}>
@@ -35,18 +36,11 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      {/* أزرار التنقل */}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/images')}
-      >
+      <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>🖼 ضغط الصور</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        style={[styles.button, styles.buttonSecondary]}
-        onPress={() => router.push('/files')}
-      >
+      <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
         <Text style={styles.buttonText}>📁 ضغط الملفات</Text>
       </TouchableOpacity>
     </ScrollView>
