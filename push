@@ -1,3 +1,0 @@
-git add app.json .github/workflows/build.yml package.json
-git commit -m "Fix: Update app.json package name, simplify workflow, add assets verification"
-git push origin main
