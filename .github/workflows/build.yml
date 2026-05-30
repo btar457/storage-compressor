@@ -35,6 +35,10 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps --no-package-lock
 
+      - name: Check TypeScript
+        run: npx tsc --noEmit --skipLibCheck
+        continue-on-error: true
+
       - name: Prebuild Android
         env:
           EXPO_PUBLIC_DOMAIN: ${{ secrets.EXPO_PUBLIC_DOMAIN }}
@@ -53,7 +57,8 @@ jobs:
             -Pandroid.injected.signing.store.file=$(pwd)/keystore.jks \
             -Pandroid.injected.signing.store.password=$STORE_PASSWORD \
             -Pandroid.injected.signing.key.alias=$KEY_ALIAS \
-            -Pandroid.injected.signing.key.password=$KEY_PASSWORD
+            -Pandroid.injected.signing.key.password=$KEY_PASSWORD \
+            --info 2>&1 | tail -200
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
