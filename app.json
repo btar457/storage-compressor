@@ -5,6 +5,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "extra": {
+      "eas": {
+        "projectId": "3c0e9f0c-a89f-4154-9cbb-c7aa849b5047"
+      }
+    },
     "android": {
       "package": "com.btar457.storagecompressor"
     },
